@@ -8,6 +8,14 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
+type PixKeyRepositoryInterface interface {
+	Register(pixKey *PixKey) (*PixKey, error)
+	FindKeyByKind(key string, kind string) (*PixKey, error)
+	AddBank(bank *Bank) error
+	AddAccount(account *Account) error
+	FindAccount(id string) (*Account, error)
+}
+
 type Status int
 
 // Declare related constants for each weekday starting with index 1
