@@ -7,11 +7,9 @@ import (
 )
 
 type Bank struct {
-	Id        string    `json:"id"`
-	Code      string    `json:"code"`
-	Name      string    `json:"name"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
+	Base
+	Code string `json:"code"`
+	Name string `json:"name"`
 }
 
 func (b Bank) isValid() error {
@@ -24,7 +22,7 @@ func NewBank(code string, name string) (*Bank, error) {
 		Name: name,
 	}
 
-	bank.Id = uuid.NewV4().String()
+	bank.ID = uuid.NewV4().String()
 	bank.CreatedAt = time.Now()
 
 	if err := bank.isValid(); err != nil {
