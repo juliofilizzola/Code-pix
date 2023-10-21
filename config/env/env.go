@@ -11,6 +11,7 @@ import (
 var (
 	Debug         = ""
 	AutoMigrateDb = ""
+	Port          = ""
 	Env_Service   = ""
 	Dns           = ""
 	DbType        = ""
