@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package github.com.juliofilizzola.Code_pix;
+package github.com.juliofilizzola.codepix;
 
-option go_package = "proto;protoBuffer";
+option go_package = "./protofiles;./pb";
 
 message PixKeyRegistration {
   string kind = 1;
